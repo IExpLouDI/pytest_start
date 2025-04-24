@@ -1,0 +1,23 @@
+[project]
+name = "pytest-project"
+version = "0.1.0"
+description = "My first pytest project"
+authors = [
+    {name = "Viacheslav",email = "iexploudi@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+]
+
+[tool.poetry]
+packages = [{include = "pytest_project", from = "src"}]
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+selenium = "^4.31.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
