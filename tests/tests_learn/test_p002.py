@@ -7,6 +7,7 @@ task.__new__.__defaults__ = (None, None, False, None)
 
 
 def test_defaults():
+	print("Hello")
 	"""Использование параметров не должно вызывать значения по умолчанию"""
 	t1 = task()
 	t2 = task(None, None, False, None)
