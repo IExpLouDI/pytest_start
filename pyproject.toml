@@ -16,13 +16,22 @@ packages = [{include = "pytest_project", from = "src"}]
 [tool.pytest.ini_options]
 markers = [
     "run_these_please: marks tests",
-    "serial",
+    "chart_2: marks tests for charter 2",
+    "smoke: mark for smoke tests",
+    "get: some mark"
 ]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.5"
 selenium = "^4.31.0"
 requests = "^2.32.3"
+six = "^1.17.0"
+click = "^8.1.8"
+tinydb = "^4.8.2"
+setuptools = "^79.0.1"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

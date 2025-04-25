@@ -1,9 +1,3 @@
-from selenium import webdriver
-import pytest
+"""Placeholder."""
 
-
-@pytest.fixture(scope="session")
-def browser():
-	driver = webdriver.Chrome()
-	yield driver
-	driver.quit()
+# nothing here yet
