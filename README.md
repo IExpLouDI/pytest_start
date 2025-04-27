@@ -61,3 +61,29 @@ style = no полностью удаляет трассировку.
 тестов. Она не меняет ваши тесты; сообщает самый медленный N номер
 tests/setups/teardowns по окончании тестов. Если вы передадите --durations=0, он
 сообщит обо всем в порядке от самого медленного к самому быстрому.
+
+Запустить все тесты из одного каталога
+```rb
+pytest tests\func --tb=no
+```
+
+-v показывает синтаксис для запуска определенного каталога, класса и теста.
+```rb
+pytest -v tests\func --tb=no
+Результат
+ests\func\test_add_variety.py::test_add_2[task2] PASSED
+tests\func\test_add_variety.py::test_add_2[task3] PASSED
+tests\func\test_add_variety.py::test_add_3[sleep-None-False] PASSED
+tests\func\test_unique_id_4.py::test_unique_id_is_a_duck xfail
+tests\func\test_unique_id_4.py::test_unique_id_not_a_duck XPASS
+```
+
+Чтобы запустить файл, полный тестов
+```rb
+pytest tests/func/test_add.py
+```
+
+Чтобы запустить одну тестовую функцию
+```rb
+pytest -v tests/func/test_add.py::test_add_returns_valid_id
+```

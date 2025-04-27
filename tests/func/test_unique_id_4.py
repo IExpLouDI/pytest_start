@@ -29,7 +29,7 @@ def test_unique_id_not_a_duck():
 def test_unique_id_2():
     """unique_id() should return an unused id."""
     ids = list()
-    ids.append(tasks.add(tasks.Task('one')))
+    ids.append(tasks.add(tasks.Task('four')))
     ids.append(tasks.add(tasks.Task('two')))
     ids.append(tasks.add(tasks.Task('three')))
     # grab a unique id
