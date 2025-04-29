@@ -87,3 +87,9 @@ pytest tests/func/test_add.py
 ```rb
 pytest -v tests/func/test_add.py::test_add_returns_valid_id
 ```
+
+Запуск функции из файла, передавая на вход параметры
+
+```rb
+ poetry run pytest -v "tests/func/test_add_variety.py::test_add_3[sleep-None-False]"
+```
