@@ -93,3 +93,9 @@ pytest -v tests/func/test_add.py::test_add_returns_valid_id
 ```rb
  poetry run pytest -v "tests/func/test_add_variety.py::test_add_3[sleep-None-False]"
 ```
+
+--pdb Запуск теста с режимом отладки    
+
+```rb
+ poetry run pytest --pdb "tests/func/test_add_variety.py::test_add_3"
+```
