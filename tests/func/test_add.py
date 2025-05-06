@@ -1,16 +1,10 @@
 """Проверяем функцию API tasks.add"""
-
 import pytest
 import tasks
 from tasks import Task
 
 
-def test_add():
-    """Placeholder test."""
-    pass
-
-
-def test_add_returns_valid_id():
+def test_add_returns_valid_id(task_db):
     """tasks.add(valid_task) должен возвращать целое число"""
     # GIVEN an initialized tasks db
     # WHEN a new task is added
@@ -38,13 +32,8 @@ def test_added_task_has_id_set():
     assert task_from_db.id == task_id
 
 
-@pytest.fixture(autouse=True)
-def initialized_tasks_db(tmpdir):
-    """Connect to db before testing, disconnect after."""
-    # Setup : start db
-    tasks.start_tasks_db(str(tmpdir), "tiny")
+def test_add_increases_count(db_with_3_tasks):
+    tasks.add(Task("Throw a party"))
 
-    yield # тут происходит тестирование
+    assert tasks.count() == 4
 
-    # Teardown : stop db
-    tasks.stop_tasks_db()
