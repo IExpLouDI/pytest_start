@@ -23,7 +23,7 @@ def test_added_task_has_id_set():
     task_id = tasks.add(new_task)
 
     # WHEN task is retrieved
-    task_from_db = tasks.add(new_task)
+    # task_from_db = tasks.add(new_task)
 
     # WHEN task is retieved
     task_from_db = tasks.get(task_id)

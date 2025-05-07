@@ -24,7 +24,8 @@ from tasks import Task
 @pytest.fixture(scope="session")
 def task_db_session(tmpdir_factory):
     """Create DB session"""
-    tasks.start_tasks_db(str(tmpdir), "tiny")
+    temp_dir = tmpdir_factory.mktemp("temp")
+    tasks.start_tasks_db(str(temp_dir), "tiny")
     yield
     tasks.stop_tasks_db()
 
