@@ -1,2 +1,8 @@
 .*
 !.gitignore
+/.idea
+/venv
+/tests/tests_learn/__pycache__/
+/tests/func/__pycache__/
+/src/tasks/__pycache__/
+/tests/unit/__pycache__/
